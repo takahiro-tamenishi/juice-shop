@@ -285,6 +285,7 @@ restoreOverwrittenFilesWithOriginals().then(() => {
   /* Swagger documentation for B2B v2 endpoints */
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
+  app.use(express.static(path.resolve('public')))
   app.use(express.static(path.resolve('frontend/dist/frontend')))
   app.use(cookieParser('kekse'))
   // vuln-code-snippet end directoryListingChallenge accessLogDisclosureChallenge
